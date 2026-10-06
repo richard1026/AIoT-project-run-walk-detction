@@ -1,0 +1,15 @@
+services:
+  thingsboard:
+    image: thingsboard/tb-postgres
+    restart: always
+    ports:
+      - "8080:9090"
+      - "1883:1883"
+      - "9001:9001"
+    volumes:
+      - tb-data:/data
+
+volumes:
+  tb-data:
+    external: true
+    name: 50706c583d2fb3d9d57ad28d43ad3c2d2b280d34f60452c51ff14a013bae1086
